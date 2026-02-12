@@ -8,13 +8,13 @@ public class Main {
     public static void main(String[] args) {
 
         // 1) Creamos unidades (observa el super(...) por debug en cada constructor)
-        Combatant u1 = new SpaceMarine("Titus", "Ultramarines", 60, 85);
+        Combatant u1 = new SpaceMarine("Titus", "Ultramarines", 60, 85); // combatant es el padre por eso podemos crear la unit asi
         Combatant u2 = new OrkBoy("Ghaz Jr.", "unknown", 55, 40);
         Combatant u3 = new EldarRanger("Iyanna", "unknown", 45, 80 );
 
         // 2) Polimorfismo: misma lista, tipos distintos
         List<Combatant> squad = new ArrayList<>();
-        squad.add(u1);
+        squad.add(u1); //añado los combatientes a la lista, aunque sean de tipos distintos, gracias al polimorfismo
         squad.add(u2);
         squad.add(u3);
 
@@ -31,7 +31,7 @@ public class Main {
 
         // 4) Simulación simple: todos atacan al objetivo 0 (Titus)
         //    Nota: receiveDamage no está en Combatant, así que necesitamos castear a UnitBase
-        UnitBase target = (UnitBase) u1;
+        UnitBase target = (UnitBase) u1; //revisar esto con la IA, qué hace esta linea?
 
         System.out.println("\n=== FOCUS FIRE ON: " + target.getName() + " ===");
         for (Combatant attacker : squad) {
