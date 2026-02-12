@@ -68,12 +68,12 @@ public abstract class UnitBase implements Combatant {
 
     //metodos override de Combatant
     @Override
-    public int attack() {
+    public abstract int attack() {
         return 0;
     }
 
     @Override
-    public void battleCry() {
+    public abstract void battleCry() {
 
     }
 }
